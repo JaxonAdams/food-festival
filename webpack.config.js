@@ -10,7 +10,7 @@ module.exports = {
         tickets: './assets/js/tickets.js',
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: __dirname + '/dist',
         filename: '[name].bundle.js'
     },
     module: {
@@ -46,5 +46,10 @@ module.exports = {
             analyzerMode: 'static'
         })
     ],
-    mode: 'development'
+    mode: 'development',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, '/')
+        }
+    }
 };
